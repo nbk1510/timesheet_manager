@@ -1,0 +1,24 @@
+<h1>Create Timesheet Entry</h1>
+<% @timesheet.errors.full_messages.each do |message| %>
+  <p><%= message %></p>
+<% end %>
+<%= form_with model: @timesheet do |form| %>
+
+  
+  <div>
+    <%= form.label :date %>:  <%= form.date_field :date %>
+  </div>
+
+  <div>
+    <%= form.label :start_time %> <%= form.text_field :start_time %>
+  </div>
+
+   <div>
+    <%= form.label :end_time %> <%= form.text_field :end_time %>
+    
+  </div>
+
+  <div>
+    <%= form.submit "Create"%>
+  </div>
+<% end %>

@@ -1,0 +1,5 @@
+<button><%= link_to "Create Timesheet Entry", new_timesheet_path %></button>
+<h1>Timesheet Entries</h1>
+<% @timesheets.each do |timesheet| %>
+  <p><%= timesheet.date.strftime("%m/%d/%Y") %>: <%= timesheet.start_time %> - <%= timesheet.end_time %> <b>$<%= timesheet.calculated_pay %></b></p>
+<% end %>
